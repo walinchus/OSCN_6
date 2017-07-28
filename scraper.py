@@ -5,7 +5,7 @@ import scraperwiki
 import lxml
 import urlparse
 import urllib2
-import mechanize
+#import mechanize
 import requests
 import lxml.html
 import sqlite3
