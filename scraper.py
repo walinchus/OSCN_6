@@ -92,7 +92,7 @@ def scrape_and_look_for_next_link(url):
     #html = scraperwiki.scrape(url)
     page = requests.get(url)
     html = page.content
-    #print html
+    print html
     root = lxml.html.fromstring(html)
     scrape_table(root)
     #CaseEndingNumber += 1
