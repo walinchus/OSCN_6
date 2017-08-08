@@ -18,7 +18,7 @@ years = ['2011','2012','2013','2014','2015','2016','2017']
 CrimeSeverity = ['CF','CM']
 
 def CaseEndingNumbers():
-    for x in range(1, 5000):
+    for x in range(1, 2):
         yield '%d' % x
         
 
@@ -44,6 +44,7 @@ def scrape_table(root):
             #print Case_Style
             record['Case Style'] = table_cells[0].text_content()
             record['Date Filed and Judge'] = table_cells[1].text_content()
+            record['URL'] = table_cellsurls[0].attrib.get('href')
             #record['Case Number'] = table_cells[0].strong.text_content()
             #this line adds 1 to the ID no. we set at 0 earlier
             #idno=idno+1
