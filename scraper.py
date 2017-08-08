@@ -105,7 +105,7 @@ def scrape_and_look_for_next_link(url):
         record['URL'] = next_url
         scraperwiki.sqlite.save(['URL'], record)
         scrape_and_look_for_next_link(next_url)
-    if i == 450:
+    '''if i == 450:
         time.sleep(65)
         next_url = ListofOKCases[i]
         print next_url
@@ -119,7 +119,7 @@ def scrape_and_look_for_next_link(url):
         record = {}
         record['URL'] = next_url
         scraperwiki.sqlite.save(['URL'], record)
-        scrape_and_look_for_next_link(next_url)   
+        scrape_and_look_for_next_link(next_url)''' 
         
            
         
