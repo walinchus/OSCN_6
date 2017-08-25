@@ -11,10 +11,11 @@ import lxml.html
 import sqlite3
 import time
 
-#counties = ['adair','alfalfa','appellate','atoka','beaver','beckham','blaine','bryan','caddo','canadian','carter','cherokee','choctaw','cimarron','cleveland','coal','comanche','cotton','craig','creek','bristow','drumright','custer','delaware','dewey','ellis','garfield','garvin','grady','grant','greer','harmon','harper','haskell','hughes','jackson','jefferson','johnston','kay','poncacity','kingfisher','kiowa','latimer','leflore','lincoln','logan','love','major','marshall','mayes','mcclain','mccurtain','mcintosh','murray','muskogee','noble','nowata','okfuskee','oklahoma','okmulgee','henryetta','osage','ottawa','payne','pawnee','pittsburg','pontotoc','pottawatomie','pushmataha','rogermills','rogers','seminole','sequoyah','stephens','texas','tillman','tulsa','wagoner','washington','washita','woods','woodward']
-counties = ['oklahoma']
+counties = ['adair','alfalfa','atoka','beaver','beckham','blaine','bryan','caddo','canadian','carter','cherokee','choctaw','cimarron','cleveland','coal','comanche','cotton','craig','creek','bristow','drumright','custer','delaware','dewey','ellis','garfield','garvin','grady','grant','greer','harmon','harper','haskell','hughes','jackson','jefferson','johnston','kay','poncacity','kingfisher','kiowa','latimer','leflore','lincoln','logan','love','major','marshall','mayes','mcclain','mccurtain','mcintosh','murray','muskogee','noble','nowata','okfuskee','oklahoma','okmulgee','henryetta','osage','ottawa','payne','pawnee','pittsburg','pontotoc','pottawatomie','pushmataha','rogermills','rogers','seminole','sequoyah','stephens','texas','tillman','tulsa','wagoner','washington','washita','woods','woodward']
+#counties = ['oklahoma']
 #next_link = 0
-years = ['2011','2012','2013','2014','2015','2016','2017']
+#years = ['2011','2012','2013','2014','2015','2016','2017']
+years = ['2016','2017']
 CrimeSeverity = ['CF','CM']
 
 def CaseEndingNumbers():
@@ -90,7 +91,11 @@ def scrape_table(root):
 
 def scrape_and_look_for_next_link(url):
     #html = scraperwiki.scrape(url)
-    page = requests.get(url)
+    headers = { 'User-Agent' : 'Lucia Walinchus, Lucia@ProfessionalNewsServices.com, 646-397-7761' }
+    page = requests.get(url, headers=headers)
+    #req = urllib2.Request(url, None, headers)
+    #html = urllib2.urlopen(req).read()
+    #page = requests.get(url)
     html = page.content
     print html
     root = lxml.html.fromstring(html)
@@ -105,7 +110,7 @@ def scrape_and_look_for_next_link(url):
         record['URL'] = next_url
         scraperwiki.sqlite.save(['URL'], record)
         scrape_and_look_for_next_link(next_url)
-    '''if i == 450:
+    if i == 450:
         time.sleep(65)
         next_url = ListofOKCases[i]
         print next_url
@@ -119,7 +124,7 @@ def scrape_and_look_for_next_link(url):
         record = {}
         record['URL'] = next_url
         scraperwiki.sqlite.save(['URL'], record)
-        scrape_and_look_for_next_link(next_url)''' 
+        scrape_and_look_for_next_link(next_url) 
         
            
         
