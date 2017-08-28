@@ -12,14 +12,14 @@ import sqlite3
 import time
 
 #counties = ['adair','alfalfa','atoka','beaver','beckham','blaine','bryan','caddo','canadian','carter','cherokee','choctaw','cimarron','cleveland','coal','comanche','cotton','craig','creek','bristow','drumright','custer','delaware','dewey','ellis','garfield','garvin','grady','grant','greer','harmon','harper','haskell','hughes','jackson','jefferson','johnston','kay','poncacity','kingfisher','kiowa','latimer','leflore','lincoln','logan','love','major','marshall','mayes','mcclain','mccurtain','mcintosh','murray','muskogee','noble','nowata','okfuskee','oklahoma','okmulgee','henryetta','osage','ottawa','payne','pawnee','pittsburg','pontotoc','pottawatomie','pushmataha','rogermills','rogers','seminole','sequoyah','stephens','texas','tillman','tulsa','wagoner','washington','washita','woods','woodward']
-counties = ['oklahoma']
+counties = ['tulsa',]
 #next_link = 0
 #years = ['2011','2012','2013','2014','2015','2016','2017']
 years = ['2016','2017']
 CrimeSeverity = ['CF','CM']
 
 def CaseEndingNumbers():
-    for x in range(1, 2):
+    for x in range(1, 7500):
         yield '%d' % x
         
 
@@ -97,34 +97,214 @@ def scrape_and_look_for_next_link(url):
     #html = urllib2.urlopen(req).read()
     #page = requests.get(url)
     html = page.content
-    print html
+    #print html
     root = lxml.html.fromstring(html)
     scrape_table(root)
     #CaseEndingNumber += 1
     global i
     i = (i + 1)
-    if i < 450:
+    if i < 451:
         next_url = ListofOKCases[i]
         print next_url
         record = {}
-        record['URL'] = next_url
-        scraperwiki.sqlite.save(['URL'], record)
+        #record['URL'] = next_url
+        #scraperwiki.sqlite.save(['URL'], record)
         scrape_and_look_for_next_link(next_url)
-    if i == 450:
-        time.sleep(65)
-        next_url = ListofOKCases[i]
-        print next_url
-        record = {}
-        record['URL'] = next_url
-        scraperwiki.sqlite.save(['URL'], record)
-        scrape_and_look_for_next_link(next_url)
-    if 450 < i < 900:
-        next_url = ListofOKCases[i]
-        print next_url
-        record = {}
-        record['URL'] = next_url
-        scraperwiki.sqlite.save(['URL'], record)
-        scrape_and_look_for_next_link(next_url) 
+    if i == 451:
+      time.sleep(65)
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if 451 < i < 901:
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if i == 901:
+      time.sleep(65)
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if 901 < i < 1351:
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if i == 1351:
+      time.sleep(65)
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if 1351 < i < 1801:
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if i == 1801:
+      time.sleep(65)
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if 1801 < i < 2251:
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if i == 2251:
+      time.sleep(65)
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if 2251 < i < 2701:
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if i == 2701:
+      time.sleep(65)
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if 2701 < i < 3151:
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if i == 3151:
+      time.sleep(65)
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if 3151 < i < 3601:
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if i == 3601:
+      time.sleep(65)
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if 3601 < i < 4051:
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if i == 4051:
+      time.sleep(65)
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if 4051 < i < 4501:
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if i == 4501:
+      time.sleep(65)
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if 4501 < i < 4951:
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if i == 4951:
+      time.sleep(65)
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if 4951 < i < 5401:
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if i == 5401:
+      time.sleep(65)
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if 5401 < i < 5851:
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if i == 5851:
+      time.sleep(65)
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
+    if 5851 < i < 6301:
+      next_url = ListofOKCases[i]
+      print next_url
+      record = {}
+      #record['URL'] = next_url
+      #scraperwiki.sqlite.save(['URL'], record)
+      scrape_and_look_for_next_link(next_url)
         
            
         
