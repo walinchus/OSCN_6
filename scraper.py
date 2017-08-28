@@ -46,7 +46,7 @@ def scrape_table(root):
             record['Case Style'] = table_cells[0].text_content()
             record['Date Filed and Judge'] = table_cells[1].text_content()
             table_cellsurls = table_cells[0].cssselect("a")
-            record['URL'] = table_cellsurls[0].attrib.get('href')
+            #record['URL'] = table_cellsurls[0].attrib.get('href')
             #record['Case Number'] = table_cells[0].strong.text_content()
             #this line adds 1 to the ID no. we set at 0 earlier
             #idno=idno+1
