@@ -12,14 +12,14 @@ import sqlite3
 import time
 
 #counties = ['adair','alfalfa','atoka','beaver','beckham','blaine','bryan','caddo','canadian','carter','cherokee','choctaw','cimarron','cleveland','coal','comanche','cotton','craig','creek','bristow','drumright','custer','delaware','dewey','ellis','garfield','garvin','grady','grant','greer','harmon','harper','haskell','hughes','jackson','jefferson','johnston','kay','poncacity','kingfisher','kiowa','latimer','leflore','lincoln','logan','love','major','marshall','mayes','mcclain','mccurtain','mcintosh','murray','muskogee','noble','nowata','okfuskee','oklahoma','okmulgee','henryetta','osage','ottawa','payne','pawnee','pittsburg','pontotoc','pottawatomie','pushmataha','rogermills','rogers','seminole','sequoyah','stephens','texas','tillman','tulsa','wagoner','washington','washita','woods','woodward']
-counties = ['cleveland']
+counties = ['oklahoma','tulsa','payne','garfield','canadian','cleveland','comanche','rogers']
 #next_link = 0
 #years = ['2011','2012','2013','2014','2015','2016','2017']
 years = ['2016','2017']
 CrimeSeverity = ['CF','CM']
 
 def CaseEndingNumbers():
-    for x in range(1, 1500):
+    for x in range(1, 100):
         yield '%d' % x
         
 
@@ -45,7 +45,7 @@ def scrape_table(root):
             #print Case_Style
             record['Case Style'] = table_cells[0].text_content()
             record['Date Filed and Judge'] = table_cells[1].text_content()
-            table_cellsurls = table_cells[0].cssselect("a")
+            #table_cellsurls = table_cells[0].cssselect("a")
             #record['URL'] = table_cellsurls[0].attrib.get('href')
             #record['Case Number'] = table_cells[0].strong.text_content()
             #this line adds 1 to the ID no. we set at 0 earlier
